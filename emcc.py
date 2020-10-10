@@ -315,9 +315,10 @@ def expand_byte_size_suffixes(value):
   value = value.strip()
   match = re.match(r'^(\d+)\s*([kmgt]?b)?$', value, re.I)
   if not match:
-    if(value==-1)
-    //Do nothing
-    else
+    if value==-1:
+    # -1 means "no limit", which we don't need to parse
+    pass #do nothing
+    else:
     exit_with_error("invalid byte size `%s`.  Valid suffixes are: kb, mb, gb, tb" % value)
   value, suffix = match.groups()
   value = int(value)
